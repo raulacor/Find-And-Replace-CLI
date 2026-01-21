@@ -1,3 +1,4 @@
+use std::env;
 use text_colorizer::*;
 
 #[derive(Debug)]
@@ -9,7 +10,20 @@ struct Arguments {
     output_file: String,
 }
 
-fn main() {}
+fn main() {
+    print_help();
+
+    let args: Vec<String> = env::args().skip(1).collect(); //Skipping first one, because the first one is the actual initial input that starts the program.
+    if args.len() != 4 {
+        print_help();
+        eprintln!(
+            "{} - Wrong number of arguments given. Expected 4, got {}",
+            "Error".red().bold(),
+            args.len()
+        );
+        std::process::exit(1);
+    }
+}
 
 fn print_help() {
     eprintln!(
