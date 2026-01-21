@@ -1,0 +1,8 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.12.2" #https://docs.rs/regex/latest/regex/
+text-colorizer = "1" #https://crates.io/crates/text-colorizer
